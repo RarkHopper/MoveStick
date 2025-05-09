@@ -1,0 +1,20 @@
+{
+  "name": "movestick Devcontainer",
+  "dockerComposeFile": "compose.yaml",
+  "service": "movestick",
+  "workspaceFolder": "/movestick",
+  "remoteUser": "vscode",
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "neilbrayfield.php-docblocker",
+        "ms-vscode.makefile-tools",
+        "GitHub.copilot-chat",
+        "GitHub.copilot",
+        "bmewburn.vscode-intelephense-client"
+      ]
+    }
+  }
+}

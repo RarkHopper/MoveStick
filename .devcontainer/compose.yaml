@@ -1,0 +1,9 @@
+services:
+  movestick:
+    build: .
+    volumes:
+      - ..:/movestick
+      - /mnt/c:/mnt/c  # wsl only
+      - ~/.gitconfig:/home/vscode/.gitconfig:ro
+    tty: true
+    network_mode: host

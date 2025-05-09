@@ -1,0 +1,21 @@
+{
+  "name": "rarkhopper/movestick",
+  "version": "2.0.0",
+  "type": "project",
+  "require": {},
+  "require-dev": {
+    "pocketmine/pocketmine-mp": "^5.0.0",
+    "phpstan/phpstan": "^1.10",
+    "friendsofphp/php-cs-fixer": "^3.34"
+  },
+  "autoload": {
+    "psr-4": {
+      "rarkhopper\\movestick\\": "src/rarkhopper/movestick"
+    }
+  },
+  "scripts": {
+    "analyse": "phpstan analyse",
+    "fix": "php-cs-fixer fix",
+    "check": "php-cs-fixer fix --dry-run --diff"
+  }
+}

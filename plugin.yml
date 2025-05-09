@@ -1,4 +1,4 @@
 name: movestick
 version: 1.0.0
-main: rark\movestick\Main
-api: 3.0.0
+main: rarkhopper\movestick\Main
+api: 5.0.0
