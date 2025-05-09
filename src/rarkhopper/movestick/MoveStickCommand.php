@@ -6,23 +6,24 @@ namespace rarkhopper\movestick;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
-use pocketmine\Player;
+use pocketmine\player\Player;
+use pocketmine\utils\TextFormat;
 
-class MoveStickCommand extends Command {
+final class MoveStickCommand extends Command {
     public function __construct() {
-        parent::__construct('movestick');
+        parent::__construct("movestick", "MoveStickを取得します", "/movestick");
+        $this->setPermission("movestick.command.admin");
     }
 
-    public function execute(CommandSender $sender, string $label, array $args) {
-        if (!$sender instanceof Player) {
-            $sender->sendMessage('ゲーム内で実行してください');
-            return;
+    public function execute(CommandSender $sender, string $commandLabel, array $args) : bool {
+        if (!$this->testPermission($sender)) {
+            return false;
         }
-        $movestick = Main::getMoveStick();
-
-        if (!$sender->isOp() || !$sender->getInventory()->canAddItem($movestick)) {
-            return;
+        if ($sender instanceof Player) {
+            $sender->sendMessage(TextFormat::GREEN . "MoveStickをインベントリに追加しました");
+            $sender->getInventory()->addItem(MoveStickPlugin::getInstance()->getMoveStick());
+            return true;
         }
-        $sender->getInventory()->addItem($movestick);
+        return false;
     }
 }

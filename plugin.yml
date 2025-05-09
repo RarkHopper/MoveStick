@@ -1,4 +1,8 @@
 name: movestick
 version: 1.0.0
-main: rarkhopper\movestick\Main
+main: rarkhopper\movestick\MoveStickPlugin
 api: 5.0.0
+permissions:
+  movestick.command.admin:
+    description: Allows the player to use the /movestick command with admin privileges
+    default: op
